@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from polls import views
+
 urlpatterns = [
+	url(r'^$', views.home, name='home'),
+	url(r'^insert/$', views.insert, name='insert'),
     url(r'^admin/', admin.site.urls),
 ]
