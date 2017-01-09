@@ -10,8 +10,11 @@ def home(request):
 	return render(request, 'home.html')
 
 def pieChart(request):
+	results = Machines.objects.all()
 	return render(request, 'Pie_Chart.html')
 
-def j_display(request):
+def j_display(request, pretty=False):
 	leads_as_json = serializers.serialize('json', Machines.objects.all())
+	if pretty:
+		leads_as_json = json.dumps(json.loads(leads_as_json), indent=2)  
 	return HttpResponse(leads_as_json, content_type='json')
