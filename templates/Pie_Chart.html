@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Pie Chart | {{ block.super }}{% endblock %}
+
+<body>
+
+    {% block jumbo %}
+        <div class="jumbotron">
+
+            <div class="row">
+
+                 <div class="col-md-5">
+                    <h1>Pie Chart</h1>
+                    <p>A pie chart displaying the various devices based on their firmware</p>
+                </div>
+
+                <div class="col-md-7">
+                    <div id="pie" style="height: 450px; width: 600px">
+
+                        <script language="javascript" type="text/javascript" src="/media/js/flot/jquery.flot.js"></script>
+                        <script language="javascript" type="text/javascript" src="/media/js/flot/jquery.flot.pie.js"></script>
+
+            </div>
+        </div>
+    {% endblock %}
+
+</body>

@@ -4,5 +4,8 @@ from django.shortcuts import render
 def home(request):
 	return render(request, 'home.html')
 
-def insert(request):
-	return render(request, 'insert.html')
+def pieChart(request):
+	return render(request, 'Pie_Chart.html')
+
+def j_display(request):
+	return render(request, 'j_display.html')
