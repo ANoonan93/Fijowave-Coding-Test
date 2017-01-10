@@ -10,10 +10,11 @@ def home(request):
 	return render(request, 'home.html')
 
 def pieChart(request):
-	return render(request, 'Pie_Chart.html', {'firmwareobject': Machines.objects.all()})
+	data = Machines.objects.all()
+	return render(request, 'Pie_Chart.html', {'firmwareobject': data})
 
 def j_display(request, pretty=False):
 	leads_as_json = serializers.serialize('json', Machines.objects.all())
 	if pretty:
 		leads_as_json = json.dumps(json.loads(leads_as_json), indent=2)  
-	return HttpResponse(leads_as_json, content_type='json')
+	return render(request, "j_display.html", {'data': leads_as_json})
